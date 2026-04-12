@@ -26,4 +26,10 @@ public class UserController {
         model.addAttribute("error", "Username atau Password salah");
         return "login";
     }
+
+    @GetMapping("/home")
+    public String home(Model model) {
+        model.addAttribute("users", userList);
+        return "home"; // Mengarah ke home.html
+    }
 }
