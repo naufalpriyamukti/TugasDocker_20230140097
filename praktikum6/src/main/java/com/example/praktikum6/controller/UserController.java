@@ -44,4 +44,9 @@ public class UserController {
         userList.add(user); // Menambahkan data dari form ke list
         return "redirect:/home"; // Kembali ke home setelah input
     }
+
+    @GetMapping("/logout")
+    public String logout() {
+        return "redirect:/";
+    }
 }
