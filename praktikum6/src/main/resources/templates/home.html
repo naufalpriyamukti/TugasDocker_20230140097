@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8f9fa; padding: 40px; color: #333; }
+        .container { max-width: 800px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); }
+        h2 { color: #0d6efd; }
+        .btn { display: inline-block; padding: 10px 15px; background-color: #198754; color: white; text-decoration: none; border-radius: 5px; transition: 0.3s; margin-bottom: 20px; }
+        .btn:hover { background-color: #157347; }
+        .btn-danger { background-color: #dc3545; margin-top: 20px; }
+        .btn-danger:hover { background-color: #bb2d3b; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
+        th { background-color: #0d6efd; color: white; }
+        tr:hover { background-color: #f1f1f1; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>MY Website NIM_KAMU</h2>
+    <p>Selamat datang di aplikasi!</p>
+
+    <a th:href="@{/form}" class="btn">Input Data Mahasiswa</a>
+
+    <h3>Data Mahasiswa</h3>
+    <table>
+        <thead>
+        <tr>
+            <th>No</th>
+            <th>Nama</th>
+            <th>NIM</th>
+            <th>Jenis Kelamin</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:if="${users.empty}">
+            <td colspan="4" style="text-align: center; color: #888;">Belum ada data</td>
+        </tr>
+        <tr th:each="user, stat : ${users}">
+            <td th:text="${stat.count}">1</td>
+            <td th:text="${user.nama}">Nama</td>
+            <td th:text="${user.nim}">NIM</td>
+            <td th:text="${user.jenisKelamin}">Jenis Kelamin</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <a th:href="@{/logout}" class="btn btn-danger">Logout</a>
+</div>
+</body>
+</html>
