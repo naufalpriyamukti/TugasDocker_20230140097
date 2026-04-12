@@ -38,4 +38,10 @@ public class UserController {
         model.addAttribute("user", new User());
         return "form"; // Mengarah ke form.html
     }
+
+    @PostMapping("/submit")
+    public String submitForm(@ModelAttribute User user) {
+        userList.add(user); // Menambahkan data dari form ke list
+        return "redirect:/home"; // Kembali ke home setelah input
+    }
 }
