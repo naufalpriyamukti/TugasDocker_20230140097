@@ -32,4 +32,10 @@ public class UserController {
         model.addAttribute("users", userList);
         return "home"; // Mengarah ke home.html
     }
+
+    @GetMapping("/form")
+    public String showForm(Model model) {
+        model.addAttribute("user", new User());
+        return "form"; // Mengarah ke form.html
+    }
 }
