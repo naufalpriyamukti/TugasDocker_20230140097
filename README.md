@@ -1,5 +1,3 @@
-<img width="1919" height="1199" alt="image" src="https://github.com/user-attachments/assets/aea96bfb-765f-456a-9b82-f513c23bf010" />
-
 Image Docker
 <img width="1887" height="1068" alt="Image" src="https://github.com/user-attachments/assets/925860ba-62af-4177-b798-a35fe4d9fb65" />
 
